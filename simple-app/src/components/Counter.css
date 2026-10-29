@@ -1,0 +1,94 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.counter-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  padding: 2rem 3rem;
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+}
+
+.count-value {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  display: block;
+  min-width: 100px;
+  text-align: center;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-counter {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 120px;
+}
+
+.btn-increment {
+  background: #51cf66;
+  color: white;
+}
+
+.btn-increment:hover {
+  background: #40c057;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(81, 207, 102, 0.4);
+}
+
+.btn-decrement {
+  background: #ff6b6b;
+  color: white;
+}
+
+.btn-decrement:hover {
+  background: #fa5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.btn-reset {
+  background: #868e96;
+  color: white;
+}
+
+.btn-reset:hover {
+  background: #748ffc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(116, 143, 252, 0.4);
+}
+
+.btn-counter:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .count-value {
+    font-size: 3rem;
+  }
+
+  .counter-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-counter {
+    width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+.user-greeting {
+  margin: 1rem 0;
+}
+
+.user-greeting h2 {
+  color: #667eea;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.welcome-message {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+}
