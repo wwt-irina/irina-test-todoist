@@ -2,10 +2,24 @@ import React, { useState } from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { AddTask } from '../AddTask';
+import { useAuth } from '../../hooks/useAuth';
 
 export const Header = ({ darkMode, setDarkMode }) => {
   const [shouldShowMain, setShouldShowMain] = useState(false);
   const [showQuickAddTask, setShowQuickAddTask] = useState(false);
+  const { isAuthenticated, user, login, logout, loading } = useAuth();
+
+  const handleAuthAction = async () => {
+    try {
+      if (isAuthenticated) {
+        await logout();
+      } else {
+        await login();
+      }
+    } catch (error) {
+      console.error('Authentication error:', error);
+    }
+  };
 
   return (
     <header className="header" data-testid="header">
@@ -37,6 +51,19 @@ export const Header = ({ darkMode, setDarkMode }) => {
               >
                 <FaPizzaSlice />
               </button>
+            </li>
+            <li className="settings__auth">
+              {!loading && (
+                <button
+                  data-testid="auth-action"
+                  aria-label={isAuthenticated ? 'Logout' : 'Login'}
+                  type="button"
+                  onClick={handleAuthAction}
+                  title={isAuthenticated && user ? `${user.name || user.email}` : 'Login with Okta'}
+                >
+                  {isAuthenticated ? 'Logout' : 'Login'}
+                </button>
+              )}
             </li>
           </ul>
         </div>
