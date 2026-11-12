@@ -210,3 +210,5 @@ Contributions are highly encouraged! Areas for improvement:
 ## License
 
 See LICENSE.txt for details.
+
+Documentation smoke check for FORGE branding.
